@@ -10,4 +10,4 @@ Its use express as server or middleware in this WebApp.
  npm start
  
  # Troubleshoot on Running
- npm i nodemon -g
+ npm i nodemon -g / npm install nodemon
