@@ -4,8 +4,13 @@ const User = require('../model/User');
 
 
 
-//Get Request:-     
-router.get('/', async(req, res) =>{
+//Get Request:-    
+router.get("/", (req, res) => {
+   res.render('index')
+}) ;
+
+
+router.get('/r', async(req, res) =>{
     try {
         const user = await User.find()
         res.json(user)
@@ -35,7 +40,12 @@ router.get('/', async(req, res) =>{
     })
     
     //Post Request (Add new Data)
-    
+    router.post('/reg', async(req, res) => {
+       const email = req.body.email
+        console.log(email)
+        res.send(email);
+    });
+
      router.post('/p', async(req, res) => {
         try {
             const user = new User(
